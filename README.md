@@ -42,4 +42,4 @@ Kann man behaupten, dass mehr Merchandise-Artikel gesucht/verkauft werden, je l√
 ------
 ![alt text][model]
 
-[model]: ./ER_model.jpg
+[model]: https://github.com/patheticitch/NBA-database-project/blob/master/ER_model.jpeg
