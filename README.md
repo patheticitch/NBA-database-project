@@ -4,7 +4,7 @@
 TER-Modell NBA-PlayOffs (22.4.-30.6.2006)
 
 
-####Fragen:
+#####Fragen:
 
 
 1.	Wie viele User suchen nach NBA-Spielern und Teams, die in den Play-Offs vertreten sind?
@@ -31,15 +31,15 @@ TER-Modell NBA-PlayOffs (22.4.-30.6.2006)
 11.	Ist der meistgesuchte Spieler nicht in den Play-Offs vertreten (wichtigsten Stars der Liga durchtesten)?
 
 
-####Übergeordnete Frage:
-------
+#####Übergeordnete Frage:
+---
 
 Werden Spieler und Teams die in den NBA-Play-Offs vertreten sind häufiger gesucht als andere, bekannte Spieler und Teams der Liga, die nicht in den Play-Offs vertreten sind? Korrelieren Anfragen (Häufigkeit) nach Merchandise-Artikeln von Teams und deren Spielern mit den Suchanfragen nach Spielern und Teams selbst?
 
 Kann man behaupten, dass mehr Merchandise-Artikel gesucht/verkauft werden, je länger der Spieler/das Team im Turnier ist? (Siehe Turnierplan)
 
-####Vorläufiges ER-Modell
-------
+#####Vorläufiges ER-Modell
+---
 ![alt text][model]
 
 [model]: https://github.com/patheticitch/NBA-database-project/blob/master/ER_model.jpeg
