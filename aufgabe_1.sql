@@ -6,9 +6,9 @@ insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'miami heat' as Tea
 insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'chicago bulls' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%chicago bulls%' GROUP BY ANONID);
 insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'la clippers' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%la clippers%' GROUP BY ANONID);
 insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'denver nuggets' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%denver nuggets%' GROUP BY ANONID);
-insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'brooklyn nets' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%brooklyn nets%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'New Jersey Nets' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%New Jersey Nets%' GROUP BY ANONID);
 insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'indiana pacers' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%indiana pacers%' GROUP BY ANONID);
-insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'pheonix suns' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%pheonix suns%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'phoenix suns' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%phoenix suns%' GROUP BY ANONID);
 insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'la lakers' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%la lakers%' GROUP BY ANONID);
 insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'detroit pistons' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%detroit pistons%' GROUP BY ANONID);
 insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'milwaukee bucks' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%milwaukee bucks%' GROUP BY ANONID);
