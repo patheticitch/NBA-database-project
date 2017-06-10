@@ -1,0 +1,16 @@
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'cleveland cavaliers' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%cleveland cavaliers%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'washington wizards' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%washington wizards%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'san antonio spurs' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%san antonio spurs%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'sacramento kings' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%sacramento kings%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'miami heat' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%miami heat%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'chicago bulls' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%chicago bulls%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'la clippers' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%la clippers%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'denver nuggets' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%denver nuggets%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'brooklyn nets' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%brooklyn nets%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'indiana pacers' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%indiana pacers%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'pheonix suns' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%pheonix suns%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'la lakers' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%la lakers%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'detroit pistons' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%detroit pistons%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'milwaukee bucks' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%milwaukee bucks%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'memphis grizzlies' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%memphis grizzlies%' GROUP BY ANONID);
+insert into AUFGABE_1 (QUERYCOUNT,TEAMNAME) select count(*), 'dallas mavericks' as Teamname from (select count(ANONID) FROM AOLDATA.QUERYDATA WHERE QUERY LIKE '%dallas mavericks%' GROUP BY ANONID);
