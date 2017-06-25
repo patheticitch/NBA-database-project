@@ -20,8 +20,8 @@ import org.jfree.data.jdbc.JDBCPieDataset;
 public class OracleConnect {
 	private static final String DBNAME = "";
 	private static final String URL = "jdbc:oracle:thin:@localhost:1521:oracle";
-	private static final String USER = "s864398";
-	private static final String PASSWORD = "Uno2Hid4";
+	private static final String USER = "";
+	private static final String PASSWORD = "";
 	private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
 	private Connection con;
 	private PreparedStatement prepStatement_SELECT_FROM_QUERYDATA;
@@ -127,7 +127,6 @@ public class OracleConnect {
 		return pieChart;
 	}
 	public void drawChart(JFreeChart chart) {
-		Plot plot = chart.getPlot();
 		ChartFrame frame = new ChartFrame(chart.getTitle().getText(),chart,true);
 		frame.setVisible(true);
 		frame.setSize(599,400);
