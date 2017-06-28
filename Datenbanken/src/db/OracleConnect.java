@@ -13,8 +13,9 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.Plot;
+import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.general.PieDataset;
+import org.jfree.data.jdbc.JDBCCategoryDataset;
 import org.jfree.data.jdbc.JDBCPieDataset;
 
 public class OracleConnect {
@@ -107,7 +108,7 @@ public class OracleConnect {
 		   System.out.println("================================================================");
 	   }
 	  
-	public JFreeChart createChart(String query, String title) {
+	public JFreeChart createPieChart(String query, String title) {
 		JFreeChart pieChart = null;
 		try {
 			PieDataset pieDataset = new JDBCPieDataset(this.connect(DBNAME), query);
@@ -126,25 +127,50 @@ public class OracleConnect {
 
 		return pieChart;
 	}
+	
+	public JFreeChart createBarChart(String query,String title,String x,String y) {
+		JFreeChart barChart = null;
+		try {
+			JDBCCategoryDataset barDataSet = new JDBCCategoryDataset(this.connect(DBNAME),query);
+			barChart= ChartFactory.createBarChart(title,x,y, barDataSet,PlotOrientation.HORIZONTAL,true,false,false);
+		}
+		catch (SQLException sqlEx) { // checked exception
+			System.err.println("Error trying to acquire JDBCPieDataset.");
+			System.err.println("Error Code: " + sqlEx.getErrorCode());
+			System.err.println("SQLSTATE:   " + sqlEx.getSQLState());
+			sqlEx.printStackTrace();
+		}
+		return barChart;
+
+	}
 	public void drawChart(JFreeChart chart) {
 		ChartFrame frame = new ChartFrame(chart.getTitle().getText(),chart,true);
 		frame.setVisible(true);
 		frame.setSize(599,400);
-		
-		
 	}
 	
-	public void drawChartFromTeams(File file, int width, int height) {
-		String query=Query.SELECT_FROM_QUERYDATA;
-		String title="Wie oft wurde nach Temas der NBA in der Saison 2005/2006 gesucht?";
-		JFreeChart chart = this.createChart(query, title);
+	
+	public void drawPieChartFromTeams(File file, int width, int height) {
+		String query = Query.SELECT_FROM_QUERYDATA;
+		String title = "Wie oft wurde nach Temas der NBA in der Saison 2005/2006 gesucht?";
+		JFreeChart chart = this.createPieChart(query, title);
 		try {
-			ChartUtilities.saveChartAsJPEG(file,chart,width,height);
-		}
-		catch(IOException e) {
+			ChartUtilities.saveChartAsJPEG(file, chart, width, height);
+		} catch (IOException e) {
 			System.out.println("could not write file");
 		}
-		
+
+	}
+	
+	public void drawBarChartFromTeams(File file,int width,int height) {
+		String query = Query.SELECT_FROM_QUERYDATA;
+		String title = "Wie viele User haben nach den Teams der NBA Lige 2005/2006 gesucht?";
+		JFreeChart chart = this.createBarChart(query, title, "Teams", "Anzahl");
+		try {
+			ChartUtilities.saveChartAsJPEG(file, chart, width, height);
+		} catch (IOException e) {
+			System.out.println("could not write file");
+		}
 		
 	}
 

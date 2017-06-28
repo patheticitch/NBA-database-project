@@ -9,7 +9,8 @@ public class Test {
 		OracleConnect connection = new OracleConnect();
 		connection.openDB();
 		File jpg= new File("./test/first.jpg");
-		connection.drawChartFromTeams(jpg,500,400);
+		//connection.drawPieChartFromTeams(jpg,500,400);
+		connection.drawBarChartFromTeams(jpg, 500, 400);
 		connection.closeDB();
 		
 	}
