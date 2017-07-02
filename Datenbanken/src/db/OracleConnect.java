@@ -17,6 +17,7 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.general.PieDataset;
 import org.jfree.data.jdbc.JDBCCategoryDataset;
 import org.jfree.data.jdbc.JDBCPieDataset;
+import org.jfree.data.jdbc.JDBCXYDataset;
 
 public class OracleConnect {
 	private static final String DBNAME = "";
@@ -40,7 +41,10 @@ public class OracleConnect {
 		return con;
 	}
 	
-	
+	/**
+	 * opens the database connection
+	 * @throws SQLException
+	 */
 
 	public void openDB() throws SQLException {
 		con = this.connect(DBNAME);
@@ -59,9 +63,7 @@ public class OracleConnect {
 		System.out.println("Connection is closed: " + con.isClosed());
 	}
 	
-	public void printTable() {
-		
-	}
+	
 	
 	  public void printAllPersons() {
 		  //String createTable=Person_SQL_Statements.CREATE_TABLE_PERSON;
@@ -143,6 +145,10 @@ public class OracleConnect {
 		return barChart;
 
 	}
+	
+	
+	
+	
 	public void drawChart(JFreeChart chart) {
 		ChartFrame frame = new ChartFrame(chart.getTitle().getText(),chart,true);
 		frame.setVisible(true);
@@ -173,5 +179,63 @@ public class OracleConnect {
 		}
 		
 	}
+	
+	public void drawBarChartFromEight(File file, int width, int height) {
+		String query = Query.SELECT_EIGHT;
+		String title = "Wieviele User haben nach Teams im Achtelfinale gesucht?";
+		JFreeChart chart = this.createBarChart(query, title, "Teams", "Anzahl");
+		try {
+			ChartUtilities.saveChartAsJPEG(file, chart, width, height);
+		} catch (IOException e) {
+			System.out.println("could not write file");
+		}
+
+	}
+	
+	
+	public void drawBarChartFromQuarter(File file, int width, int height) {
+		String query = Query.SELECT_QUARTER;
+		String title = "Wieviele User haben nach Teams im Viertelfinale gesucht?";
+		JFreeChart chart = this.createBarChart(query, title, "Teams", "Anzahl");
+		try {
+			ChartUtilities.saveChartAsJPEG(file, chart, width, height);
+		} catch (IOException e) {
+			System.out.println("could not write file");
+		}
+
+	}
+	
+	
+	public void drawBarChartFromHalf(File file, int width, int height) {
+		String query = Query.SELECT_HALF;
+		String title = "Wieviele User haben nach Teams im Halbfinale gesucht?";
+		JFreeChart chart = this.createBarChart(query, title, "Teams", "Anzahl");
+		try {
+			ChartUtilities.saveChartAsJPEG(file, chart, width, height);
+		} catch (IOException e) {
+			System.out.println("could not write file");
+		}
+
+	}
+	
+	public void drawBarChartFromFinal(File file, int width, int height) {
+		String query = Query.SELECT_FINAL;
+		String title = "Wieviele User haben nach Teams im Finale gesucht?";
+		JFreeChart chart = this.createBarChart(query, title, "Teams", "Anzahl");
+		try {
+			ChartUtilities.saveChartAsJPEG(file, chart, width, height);
+		} catch (IOException e) {
+			System.out.println("could not write file");
+		}
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
